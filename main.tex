@@ -1,0 +1,118 @@
+\documentclass[12pt]{report}
+
+%%VARIABLES
+
+\def \mycitecolor {red}
+
+
+
+%%INVOKED PACKAGES
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+%\graphicspath{ {Images/} } %This specifies the path where any images can be found. If you have any images in any chapters then make a directory in the same directory as this file called Images and put those images in it. 
+\usepackage{geometry} 
+\usepackage{epstopdf}
+\usepackage{setspace}
+\usepackage{multicol}
+\usepackage{standalone}
+\usepackage{helvet}
+\usepackage{changepage}
+\usepackage[capposition=top]{floatrow}
+\usepackage{tikz}
+\usepackage{pdfpages}
+
+%These are the packages I use to create hyperlinks in the document. If you want to reference another part of the document, e.g. Section 2, in the code put
+
+% \section{TITLE} 
+% \label{sec:title}
+% 
+% where section 2 is in the .tex file. To reference section 2 and create a hyperlink use \cref{sec:title}, or \Cref{sec:title} to capitalize. This will also create links in the bibliography to the places where each work is cited. This behavior and the color of the links can be altered by changing the corresponding options in the first line. 
+
+%\usepackage[colorlinks=true,urlcolor = blue,citecolor=red, pdfpagelabels=true, hyperindex=true, linktocpage, pagebackref=true]{hyperref}
+%\usepackage[all]{hypcap}
+%\usepackage{cleveref}
+
+
+
+\begin{document}
+\doublespacing
+\thispagestyle{empty}
+
+{\center TITLE\\ %Write your dissertation title before the '\\' 
+        , PhD\\ %Write your name before the ','
+        University of Connecticut, \textbf{2017}\\ }
+\vspace{1cm}
+\textbf{Abstract: }  %Your abstract goes before this comment. 
+
+\newpage
+
+\pagenumbering{roman}
+{\center TITLE \\ %Write your dissertation title before the '\\' 
+
+        \vspace{1cm}
+ NAME       \\ %Write your name before the '\\'
+
+        \vspace{2cm}
+        B.A., , \textbf{}\\ %Put your University bewteen the ','s and the graduation year in between '{' and '}' 
+        M.A., , \textbf{} %Same as above. 
+
+        \vspace{7cm}
+        A Dissertation\\ 
+        Submitted in Partial Fulfillment of the\\ 
+        Requirements for the Degree of\\ 
+        Doctor of Philosophy\\ 
+        at the\\
+        University of Connecticut\\
+        2017
+
+}
+\newpage
+{\center Copyright by\\ 
+  NAME\\ %Put your name before '\\'
+\vfill 
+2017
+
+
+}
+
+\includepdf{approvalPage.pdf} %Make the approval page with the template included in the folder 'approvalPage/'. Once 'approvalPage.pdf' is built copy it to the same directory as this file. 
+\newpage
+
+\textbf{Acknowledgements: } ACKNOWLEDGEMENTS GO HERE.  
+
+
+\newpage
+
+
+\chapter*{Preface}
+WRITE A PREFACE HERE
+
+
+
+\tableofcontents
+
+
+\pagenumbering{arabic}
+
+%Here is where you put the chapters of your dissertation. The general format is: 
+
+\chapter{Theories of Meaning}
+\label{chp:theories_of_meaning}
+\input{theoriesOfMeaning.tex}
+
+%where theoriesOfMeaning.tex is a tex file in the same directory as this file. 
+
+
+
+\bibliographystyle{plain}
+\bibliography{  }%Put the path to your bibliography file here. I kept mine in this directory as main.bib. In that case all you need to put between those braces is 'main.bib'.
+
+ % \appendix
+
+ % \chapter{Appendix Title}
+ % \input{Chapters/appendix.tex}
+
+
+
+\end{document}
